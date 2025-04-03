@@ -1,0 +1,469 @@
+$ git version
+git version 2.49.0.windows.1
+
+A@DESKTOP-JTFF9U6 MINGW64 ~ (master)
+$ mkdir my-new-dir
+
+A@DESKTOP-JTFF9U6 MINGW64 ~ (master)
+$ cd my-new-dir
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ pwd
+/c/Users/A/my-new-dir
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ touch practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ ls
+practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git clone https://github.com/riu-harsh/my_demo_github.git
+Cloning into 'my_demo_github'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 21 (delta 2), reused 8 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (21/21), 6.42 KiB | 93.00 KiB/s, done.
+Resolving deltas: 100% (2/2), done.
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git init
+Initialized empty Git repository in C:/Users/A/my-new-dir/.git/
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git config --global user.name "Riya"
+git config --global user.email "riyamozumdar5@gmail.com"
+git config --global core.editor "notepad"
+git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Riya
+user.email=riyamozumdar5@gmail.com
+core.editor=notepad
+safe.directory=C:/Users
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+$ git init
+Reinitialized existing Git repository in C:/Users/A/my-new-dir/.git/
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        my_demo_github/
+        practice.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git add practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git commit -m "Added a practice file "
+[master (root-commit) 3e78b99] Added a practice file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        my_demo_github/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   my_demo_github
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git commit -m "This is a repository"
+[master d2f3173] This is a repository
+ 1 file changed, 1 insertion(+)
+ create mode 160000 my_demo_github
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git log --oneline
+d2f3173 (HEAD -> master) This is a repository
+3e78b99 Added a practice file
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch Feature-Branch
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch
+  Feature-Branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git checkout Feature-Branch
+Switched to branch 'Feature-Branch'
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git branch
+* Feature-Branch
+  master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ echo "This is my new text file" > feature-file.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ ls
+feature-file.txt  my_demo_github/  practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git status
+On branch Feature-Branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        feature-file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git add feature-file.txt
+warning: in the working copy of 'feature-file.txt', LF will be replaced by CRLF the next time Git touches it
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git commit -m "Added a file at Feature Branch"
+[Feature-Branch 3c0e7a0] Added a file at Feature Branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature-file.txt
+
+ 
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git status
+On branch Feature-Branch
+nothing to commit, working tree clean
+
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git checkout master
+Switched to branch 'master'
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch
+  Feature-Branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ ls
+my_demo_github/  practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git merge Feature-Branch
+Updating d2f3173..3c0e7a0
+Fast-forward
+ feature-file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature-file.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$  ls
+feature-file.txt  my_demo_github/  practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch -d Feature-Branch
+Deleted branch Feature-Branch (was 3c0e7a0).
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ ls
+feature-file.txt  my_demo_github/  practice.txt
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch Feature-Branch
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch
+  Feature-Branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ Git switch Feature-Branch
+Switched to branch 'Feature-Branch'
+
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git log --oneline
+3c0e7a0 (HEAD -> Feature-Branch, master) Added a file at Feature Branch
+d2f3173 This is a repository
+3e78b99 Added a practice file
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ echo "This is FB content" > F_B.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ ls
+F_B.txt  feature-file.txt  my_demo_github/  practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ cat F_B.txt
+This is FB content
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git status
+On branch Feature-Branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        F_B.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git add F_B.txt
+warning: in the working copy of 'F_B.txt', LF will be replaced by CRLF the next time Git touches it
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git commit -m "This is FB commit"
+[Feature-Branch 60e9f3a] This is FB commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 F_B.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git status
+On branch Feature-Branch
+nothing to commit, working tree clean
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git branch
+* Feature-Branch
+  master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (Feature-Branch)
+$ git switch master
+Switched to branch 'master'
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git branch
+  Feature-Branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git log --oneline
+3c0e7a0 (HEAD -> master) Added a file at Feature Branch
+d2f3173 This is a repository
+3e78b99 Added a practice file
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ ls
+feature-file.txt  my_demo_github/  practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ echo "This is Master content" > M_B.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ ls
+M_B.txt  feature-file.txt  my_demo_github/  practice.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ cat M_B.txt
+This is Master content
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git add M_Btxt
+fatal: pathspec 'M_Btxt' did not match any files
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git add M_B.txt
+warning: in the working copy of 'M_B.txt', LF will be replaced by CRLF the next time Git touches it
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git commit -m "This is Master commit"
+[master b2b57dd] This is Master commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 M_B.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git log --oneline
+b2b57dd (HEAD -> master) This is Master commit
+3c0e7a0 Added a file at Feature Branch
+d2f3173 This is a repository
+3e78b99 Added a practice file
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git merge Feature-Branch
+hint: Waiting for your editor to close the file... unix2dos: converting file C:/Users/A/my-new-dir/.git/MERGE_MSG to DOS format...
+dos2unix: converting file C:/Users/A/my-new-dir/.git/MERGE_MSG to Unix format...
+Merge made by the 'ort' strategy.
+ F_B.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 F_B.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/my-new-dir (master)
+$ cd
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~ (master)
+$ mkdir conflict-merge2
+
+A@DESKTOP-JTFF9U6 MINGW64 ~ (master)
+$ cd conflict-merge2
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git init
+Initialized empty Git repository in C:/Users/A/conflict-merge2/.git/
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/A/conflict-merge2/.git/
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ echo "Hi this is riya" > F2.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git add F2.txt
+warning: in the working copy of 'F2.txt', LF will be replaced by CRLF the next time Git touches it
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 2ae96b8] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 F2.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git branch
+* master
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git branch feature-branch
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git switch feature-branch
+Switched to branch 'feature-branch'
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (feature-branch)
+$ echo "Hi my name is Swati" >> F2.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (feature-branch)
+$ git add F2.txt
+warning: in the working copy of 'F2.txt', LF will be replaced by CRLF the next time Git touches it
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (feature-branch)
+$ git commit -m "updated F2 file in f-branch"
+[feature-branch c4a9812] updated F2 file in f-branch
+ 1 file changed, 1 insertion(+)
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (feature-branch)
+$ git status
+On branch feature-branch
+nothing to commit, working tree clean
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (feature-branch)
+$ cat F2.txt
+Hi this is riya
+Hi my name is Swati
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (feature-branch)
+$ git switch master
+Switched to branch 'master'
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ echo "I am a stylist" >> F2.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git add F2.txt
+warning: in the working copy of 'F2.txt', LF will be replaced by CRLF the next time Git touches it
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git commit -m "added a new line"
+[master 5473a5d] added a new line
+ 1 file changed, 1 insertion(+)
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ cat F2.txt
+Hi this is riya
+I am a stylist
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git merge feature-branch
+Auto-merging F2.txt
+CONFLICT (content): Merge conflict in F2.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master|MERGING)
+$ vi F2.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master|MERGING)
+$ git add F2.txt
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master|MERGING)
+$ git commit -m "Resolved merge conflict"
+[master 3477e24] Resolved merge conflict
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ cat F2.txt
+Hi this is riya
+I am a stylist
+Hi my name is Swati
+
+
+A@DESKTOP-JTFF9U6 MINGW64 ~/conflict-merge2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
